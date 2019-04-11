@@ -162,3 +162,17 @@ void print_list(List *list, void (print_data)(void *)) {
 		}
 	}
 }
+
+void del_list(List *list, int del_data) {
+	Node *node = list->head->next;
+	while (node != NULL) {
+		Node *tmp = node;
+		node = node->next;
+		if (del_data == 1) {
+			printf("Deleting data..\n");
+			free(tmp->data);
+		}
+		free(tmp);
+	}
+	free(list->head);
+}
