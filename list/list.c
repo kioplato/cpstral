@@ -112,3 +112,12 @@ void* checkout(List *list) {
 		return NULL;
 	return list->crnt->data;
 }
+
+int mv_left(List *list) {
+	if (list->crnt == NULL)
+		return -1;	// List is empty.
+	if (list->crnt->prev == NULL)
+		return -2;	// crnt is 1st node.
+	list->crnt = list->crnt->prev;
+	return 1;  // Success.
+}
