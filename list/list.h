@@ -40,4 +40,6 @@ void* checkout(List *list);
 
 int mv_left(List *list);
 
+int mv_right(List *list);
+
 #endif  // #ifndef LIST_H
