@@ -55,3 +55,15 @@ void push(List *list, void *data) {
 		list->tail = node;
 	list->n_items++;
 }
+
+void* pop_head(List *list) {
+	if (list->head->next == NULL)
+		return NULL;
+	Node *node = list->head->next;
+	void *data = node->data;
+	list->head->next = node->next;
+	if (node->next != NULL)
+		node->next->prev = NULL;
+	list->n_items--;
+	return data;
+}
