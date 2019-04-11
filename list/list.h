@@ -32,4 +32,6 @@ void push(List *list, void *data);
 
 void* pop_head(List *list);
 
+void* pop_back(List *list);
+
 #endif  // #ifndef LIST_H
