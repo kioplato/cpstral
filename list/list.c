@@ -84,3 +84,25 @@ void* pop_back(List *list) {
 	list->n_items--;
 	return data;
 }
+
+void* pop(List *list) {
+	if (list->crnt == NULL)
+		return NULL;
+	void *data = list->crnt->data;
+	Node *node = list->crnt;
+	if (list->crnt->prev != NULL)
+		list->crnt = list->crnt->prev;
+	else
+		list->crnt = list->crnt->next;
+	if (node->next != NULL)
+		node->next->prev = node->prev;
+	if (node->prev != NULL)
+		node->prev->next = node->next;
+	else
+		list->head->next = node->next;
+	if (list->tail == node)
+		list->tail = node->prev;
+	free(node);
+	list->n_items--;
+	return data;
+}
