@@ -38,4 +38,6 @@ void* pop(List *list);
 
 void* checkout(List *list);
 
+int mv_left(List *list);
+
 #endif  // #ifndef LIST_H
