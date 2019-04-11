@@ -28,4 +28,6 @@ void push_head(List *list, void *data);
 
 void push_back(List *list, void *data);
 
+void push(List *list, void *data);
+
 #endif  // #ifndef LIST_H
