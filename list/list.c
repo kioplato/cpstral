@@ -121,3 +121,12 @@ int mv_left(List *list) {
 	list->crnt = list->crnt->prev;
 	return 1;  // Success.
 }
+
+int mv_right(List *list) {
+	if (list->crnt == NULL)
+		return -1;	// List is empty.
+	if (list->crnt->next == NULL)
+		return -2;	// crnt is the last node.
+	list->crnt = list->crnt->next;
+	return 1;  // Success;
+}
