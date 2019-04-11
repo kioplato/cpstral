@@ -20,4 +20,8 @@ typedef struct List {
     size_t n_items;
 } List;
 
+// Initializes a list.
+// List must be already allocated.
+void init_list(List *list);
+
 #endif  // #ifndef LIST_H
