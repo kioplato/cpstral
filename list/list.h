@@ -48,4 +48,6 @@ int mv_tail(List *list);
 
 size_t get_n_items(List *list);
 
+void print_list(List *list, void (print_data)(void *));
+
 #endif  // #ifndef LIST_H
