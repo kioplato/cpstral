@@ -106,3 +106,9 @@ void* pop(List *list) {
 	list->n_items--;
 	return data;
 }
+
+void* checkout(List *list) {
+	if (list->crnt == NULL)
+		return NULL;
+	return list->crnt->data;
+}
