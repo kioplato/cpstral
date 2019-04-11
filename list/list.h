@@ -46,4 +46,6 @@ int mv_head(List *list);
 
 int mv_tail(List *list);
 
+size_t get_n_items(List *list);
+
 #endif  // #ifndef LIST_H
