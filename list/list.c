@@ -28,3 +28,15 @@ void push_head(List *list, void *data) {
 		list->crnt = node;
 	list->n_items++;
 }
+
+void push_back(List *list, void *data) {
+	if (list->tail == NULL)
+		return push_head(list, data);
+	Node *node = (Node*)malloc(sizeof(Node));
+	node->next = NULL;
+	node->prev = list->tail;
+	node->data = data;
+	list->tail->next = node;
+	list->tail = node;
+	list->n_items++;
+}
