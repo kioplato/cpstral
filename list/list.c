@@ -13,3 +13,18 @@ void init_list(List *list) {
 	list->head->prev = NULL;
 	list->head->data = NULL;
 }
+
+void push_head(List *list, void *data) {
+	Node *node = (Node*)malloc(sizeof(Node));
+	node->next = list->head->next;
+	if (node->next != NULL)
+		node->next->prev = node;
+	node->prev = NULL;
+	node->data = data;
+	list->head->next = node;
+	if (list->tail == NULL)
+		list->tail = node;
+	if (list->crnt == NULL)
+		list->crnt = node;
+	list->n_items++;
+}
