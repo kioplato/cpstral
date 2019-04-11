@@ -67,3 +67,20 @@ void* pop_head(List *list) {
 	list->n_items--;
 	return data;
 }
+
+void* pop_back(List *list) {
+	if (list->tail == NULL)
+		return NULL;
+	Node *node = list->tail;
+	list->tail = node->prev;
+	void *data = node->data;
+	if (node->prev != NULL)
+		node->prev->next = NULL;
+	else
+		list->head->next = NULL;
+	if (list->crnt == node)
+		list->crnt = list->crnt->prev;
+	free(node);
+	list->n_items--;
+	return data;
+}
