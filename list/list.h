@@ -36,4 +36,6 @@ void* pop_back(List *list);
 
 void* pop(List *list);
 
+void* checkout(List *list);
+
 #endif  // #ifndef LIST_H
