@@ -44,4 +44,6 @@ int mv_right(List *list);
 
 int mv_head(List *list);
 
+int mv_tail(List *list);
+
 #endif  // #ifndef LIST_H
