@@ -148,3 +148,17 @@ int mv_tail(List *list) {
 size_t get_n_items(List *list) {
 	return list->n_items;
 }
+
+void print_list(List *list, void (print_data)(void *)) {
+	Node *node = list->head->next;
+	if (node == NULL)
+		printf("List is empty.\n");
+	else {
+		while (node != NULL) {
+			if (list->crnt == node)
+				printf("* ");
+			print_data(node->data);
+			node = node->next;
+		}
+	}
+}
