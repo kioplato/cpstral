@@ -144,3 +144,7 @@ int mv_tail(List *list) {
 	list->crnt = list->tail;
 	return 1;  // Success.
 }
+
+size_t get_n_items(List *list) {
+	return list->n_items;
+}
