@@ -50,4 +50,6 @@ size_t get_n_items(List *list);
 
 void print_list(List *list, void (print_data)(void *));
 
+void del_list(List *list, int test);
+
 #endif  // #ifndef LIST_H
