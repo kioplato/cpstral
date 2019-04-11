@@ -40,3 +40,18 @@ void push_back(List *list, void *data) {
 	list->tail = node;
 	list->n_items++;
 }
+
+void push(List *list, void *data) {
+	if (list->crnt == NULL)
+		return push_head(list, data);
+	Node *node = (Node*)malloc(sizeof(Node));
+	node->next = list->crnt->next;
+	node->prev = list->crnt;
+	node->data = data;
+	list->crnt->next = node;
+	if (node->next != NULL)
+		node->next->prev = node;
+	if (list->crnt == list->tail)
+		list->tail = node;
+	list->n_items++;
+}
