@@ -130,3 +130,10 @@ int mv_right(List *list) {
 	list->crnt = list->crnt->next;
 	return 1;  // Success;
 }
+
+int mv_head(List *list) {
+	if (list->crnt == NULL)
+		return -1;	// List is empty.
+	list->crnt = list->head->next;
+	return 1;  // Success.
+}
